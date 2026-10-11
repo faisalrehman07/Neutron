@@ -1,0 +1,6 @@
+{
+  "name": "NEUTRON - Personal AI Operating System",
+  "description": "Voice-first personal AI operating system powered by Gemini Live API with real-time neural visualization, tool execution, and proactive intelligence.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
