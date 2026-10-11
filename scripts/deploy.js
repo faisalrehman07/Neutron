@@ -15,6 +15,11 @@ execSync('npm run build', { cwd: rootDir, stdio: 'inherit' });
 fs.writeFileSync(path.join(distDir, '.nojekyll'), '');
 fs.copyFileSync(path.join(distDir, 'index.html'), path.join(distDir, '404.html'));
 
+// Always wipe existing .git in dist to ensure fresh clean root commit
+try {
+  fs.rmSync(path.join(distDir, '.git'), { recursive: true, force: true });
+} catch {}
+
 console.log('[Deploy] Publishing dist directory to gh-pages branch...');
 const gitCommands = [
   'git init',
